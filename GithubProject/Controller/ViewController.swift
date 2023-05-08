@@ -9,18 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var githubManager = GithubManager()
-    let issueState = "open"
-    var issues = [IssueData]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
       
     }
     @IBAction func ButtonTapped(_ sender: UIButton) {
-        issues = githubManager.fetchIssue(issueState)!
-        print("count")
-        print(issues.count)
+    
     }
     
 

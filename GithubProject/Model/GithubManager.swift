@@ -8,10 +8,9 @@
 import Foundation
 
 struct GithubManager {
+
     let GithubURL = "https://api.github.com/repos/nasa-jpl/open-source-rover/issues"
-    
-    func fetchIssue (_ issueState: String)-> [IssueData]? {
-        var issues = [IssueData]()
+    func fetchIssue (issueState: String, completion: @escaping ([IssueData])-> Void) {
         let urlString = "\(GithubURL)?state=\(issueState)"
         if let url = URL(string: urlString){
             let session = URLSession(configuration:.default)
@@ -20,16 +19,18 @@ struct GithubManager {
                 
                 do{
                     let list = try JSONDecoder().decode([IssueData].self, from: data!)
-                    issues.append(contentsOf: list)
+                    print("dataを取得しました")
+                    DispatchQueue.main.async {
+                                   completion(list)
+                               }
+                    //print(list)
+                    //completion(list)
                 }catch{
                     print("error:\(error)")
                 }
             //print(issues)
             })
-            print(issues)
             task.resume()
         }
-        //print(issues)
-        return issues
     }
 }

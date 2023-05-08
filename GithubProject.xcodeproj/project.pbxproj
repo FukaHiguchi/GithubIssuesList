@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF7EEA3A2A08E3C80077F6EC /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7EEA392A08E3C80077F6EC /* SubViewController.swift */; };
 		AF8F93362A037F5A00D66364 /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F93342A037F5A00D66364 /* IssueCell.swift */; };
 		AF8F93372A037F5A00D66364 /* IssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8F93352A037F5A00D66364 /* IssueCell.xib */; };
 		AF8F93392A03920800D66364 /* IssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F93382A03920800D66364 /* IssueModel.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF7EEA392A08E3C80077F6EC /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		AF8F93342A037F5A00D66364 /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
 		AF8F93352A037F5A00D66364 /* IssueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueCell.xib; sourceTree = "<group>"; };
 		AF8F93382A03920800D66364 /* IssueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueModel.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				AFBE7D7B29FEAF7400ED8B97 /* ViewController.swift */,
 				AFBE7D8B29FEB02C00ED8B97 /* ListViewController.swift */,
+				AF7EEA392A08E3C80077F6EC /* SubViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				AFBE7D932A00F74B00ED8B97 /* IssueData.swift in Sources */,
 				AFBE7D9129FEB18100ED8B97 /* GithubManager.swift in Sources */,
 				AF8F93392A03920800D66364 /* IssueModel.swift in Sources */,
+				AF7EEA3A2A08E3C80077F6EC /* SubViewController.swift in Sources */,
 				AFBE7D7A29FEAF7400ED8B97 /* SceneDelegate.swift in Sources */,
 				AF8F93362A037F5A00D66364 /* IssueCell.swift in Sources */,
 			);
