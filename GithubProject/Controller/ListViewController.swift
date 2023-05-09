@@ -13,15 +13,13 @@ class ListViewController: UIViewController {
     let viewController = ViewController()
     var githubManager = GithubManager()
     var issues = [IssueData]()
-    
     @IBOutlet weak var TableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Issues"
         TableView.register(UINib(nibName: "IssueCell", bundle: nil), forCellReuseIdentifier: "Identifier")
-    }
-    override func viewWillAppear(_ animated: Bool) {
         TableView.delegate = self
         TableView.dataSource = self
         githubManager.fetchIssue(issueState: issueState){
@@ -31,7 +29,6 @@ class ListViewController: UIViewController {
         }
         print(issueState)
     }
-    
     @IBAction func valueChanged(_ sender: UISegmentedControl) {
         let value = sender.selectedSegmentIndex
         print(value)
