@@ -53,7 +53,20 @@
                         <viewLayoutGuide key="safeArea" id="xvU-am-SR2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BVE-TH-Xid"/>
+                    <navigationItem key="navigationItem" id="BVE-TH-Xid">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="bZP-kb-1BF">
+                            <rect key="frame" x="125" y="5.6666666666666679" width="143" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="OPEN"/>
+                                <segment title="CLOSED"/>
+                            </segments>
+                            <connections>
+                                <action selector="valueChanged:" destination="NDe-Z7-qUy" eventType="valueChanged" id="BaV-Qz-nQt"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="TableView" destination="EDH-s9-hXt" id="DQe-ia-A6c"/>
                     </connections>
