@@ -7,68 +7,70 @@
 
 import UIKit
 
+// [must] 実態に合わせた適切なクラス名にしましょう
 class ListViewController: UIViewController {
-    var issueState = "open"
+    var issueState: IssueState = .open
     var listNum: Int = 0
+    // [Q] これは使ってなさそう？
     let viewController = ViewController()
-    var githubManager = GithubManager()
-    var issues = [IssueData]()
-    @IBOutlet weak var TableView: UITableView!
-    
+    var issueRepository = GithubIssueRepository()
+    // [nits] 慣習的にvar issues: [IssueData] = []と書くことが多いです
+    var issues: [IssueData] = []
+    // [must] 小文字にしよう => tableView
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = "Issues"
-        TableView.register(UINib(nibName: "IssueCell", bundle: nil), forCellReuseIdentifier: "Identifier")
-        TableView.delegate = self
-        TableView.dataSource = self
-        githubManager.fetchIssue(issueState: issueState){
-            resData in self.issues = resData
-            self.listNum =  self.issues.count
-            self.TableView.reloadData()
-        }
+
+        fetchIssue(issueState: issueState)
         print(issueState)
     }
+
+    private func setupTableView() {
+        tableView.register(UINib(nibName: "IssueCell", bundle: nil), forCellReuseIdentifier: "Identifier")
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+
+    private func setupUI() {
+        navigationItem.title = "Issues"
+    }
+
     @IBAction func valueChanged(_ sender: UISegmentedControl) {
         let value = sender.selectedSegmentIndex
         print(value)
         if value == 0 {
-            issueState = "open"
-        }else{
-            issueState = "closed"
+            issueState = .open
+        } else {
+            issueState = .close
         }
-        githubManager.fetchIssue(issueState: issueState){
-            resData in self.issues = resData
+        fetchIssue(issueState: issueState)
+    }
+
+    private func fetchIssue(issueState: IssueState) {
+        issueRepository.fetchIssue(issueState: issueState) { resData in
+            self.issues = resData
             self.listNum =  self.issues.count
-            self.TableView.reloadData()
+            self.tableView.reloadData()
         }
     }
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    
 }
 
-extension ListViewController: UITableViewDataSource{
+extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(listNum)
-        return listNum
+        print(section)
+        return section
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = TableView.dequeueReusableCell(withIdentifier: "Identifier") as! IssueCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Identifier") as! IssueCell
         cell.title.text = issues[indexPath.row].title
         cell.date.text = issues[indexPath.row].created_at
         return cell
     }
 }
 
-extension ListViewController: UITableViewDelegate{
+extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "subVC") as! SubViewController
         vc.IssueTitle = issues[indexPath.row].title

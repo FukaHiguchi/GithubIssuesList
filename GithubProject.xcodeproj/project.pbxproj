@@ -18,7 +18,7 @@
 		AFBE7D8129FEAF7500ED8B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFBE7D8029FEAF7500ED8B97 /* Assets.xcassets */; };
 		AFBE7D8429FEAF7500ED8B97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFBE7D8229FEAF7500ED8B97 /* LaunchScreen.storyboard */; };
 		AFBE7D8C29FEB02C00ED8B97 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE7D8B29FEB02C00ED8B97 /* ListViewController.swift */; };
-		AFBE7D9129FEB18100ED8B97 /* GithubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE7D9029FEB18100ED8B97 /* GithubManager.swift */; };
+		AFBE7D9129FEB18100ED8B97 /* GithubIssueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE7D9029FEB18100ED8B97 /* GithubIssueRepository.swift */; };
 		AFBE7D932A00F74B00ED8B97 /* IssueData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE7D922A00F74B00ED8B97 /* IssueData.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		AFBE7D8329FEAF7500ED8B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFBE7D8529FEAF7500ED8B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFBE7D8B29FEB02C00ED8B97 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		AFBE7D9029FEB18100ED8B97 /* GithubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubManager.swift; sourceTree = "<group>"; };
+		AFBE7D9029FEB18100ED8B97 /* GithubIssueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubIssueRepository.swift; sourceTree = "<group>"; };
 		AFBE7D922A00F74B00ED8B97 /* IssueData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 		AFBE7D8F29FEB16F00ED8B97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AFBE7D9029FEB18100ED8B97 /* GithubManager.swift */,
+				AFBE7D9029FEB18100ED8B97 /* GithubIssueRepository.swift */,
 				AFBE7D922A00F74B00ED8B97 /* IssueData.swift */,
 				AF8F93382A03920800D66364 /* IssueModel.swift */,
 			);
@@ -188,7 +188,7 @@
 				AFBE7D7829FEAF7400ED8B97 /* AppDelegate.swift in Sources */,
 				AFBE7D8C29FEB02C00ED8B97 /* ListViewController.swift in Sources */,
 				AFBE7D932A00F74B00ED8B97 /* IssueData.swift in Sources */,
-				AFBE7D9129FEB18100ED8B97 /* GithubManager.swift in Sources */,
+				AFBE7D9129FEB18100ED8B97 /* GithubIssueRepository.swift in Sources */,
 				AF8F93392A03920800D66364 /* IssueModel.swift in Sources */,
 				AF7EEA3A2A08E3C80077F6EC /* SubViewController.swift in Sources */,
 				AFBE7D7A29FEAF7400ED8B97 /* SceneDelegate.swift in Sources */,
@@ -268,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -322,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -339,6 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GK35YMC4B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GithubProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -351,7 +352,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.GithubProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.higuchi.GithubProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -366,6 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GK35YMC4B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GithubProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -378,7 +380,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.GithubProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.higuchi.GithubProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
