@@ -7,6 +7,7 @@
 
 import Foundation
 
+// [must] ファイルごと消す
 struct IssueModel{
     let title: String
     let date: String

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// [must] 実態に合わせた適切なクラス名にしましょう
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
